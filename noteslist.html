@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All notes</title>
+
+    <!-- Font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Style sheet link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <p class="welcome">
+        <span class="wel">Welcome</span
+        ><img src="images/playstore.png" alt="avatar" class="avatar" /> Stewie_g
+      </p>
+      <h2 class="all-notes">All Notes</h2>
+    </header>
+    <div class="noteslist-container">
+      <div class="notes-container">
+        <div class="left">
+          <div class="avatar-box">
+            <img src="images/playstore.png" alt="avatar" class="avatar" />
+          </div>
+          <div class="avater-text">
+            <p class="avatar-name">esther233</p>
+          </div>
+
+          <h3>CS215 Notes</h3>
+          <div class="btn-group">
+            <button
+              type="submit"
+              onclick="window.location.href='viewnotes.html';"
+            >
+              VIEW
+            </button>
+            <button
+              class="secondary-btn"
+              type="submit"
+              onclick="window.location.href='access.html';"
+            >
+              SHARE
+            </button>
+          </div>
+        </div>
+
+        <div class="right">
+          <p class="time">Created: Dec 18, 2020 at 12:05 pm</p>
+          <p class="time">Latest post: Jan 5, 2021 at 3:32pm</p>
+          <p class="posts">
+            <i class="fa-regular fa-pen-to-square"></i> 20 posts
+          </p>
+        </div>
+      </div>
+
+      <div class="notes-container">
+        <div class="left">
+          <div class="avatar-box">
+            <img src="images/playstore.png" alt="avatar" class="avatar" />
+          </div>
+          <div class="avater-text">
+            <p class="avatar-name">esther233</p>
+          </div>
+
+          <h3>CS370 Notes</h3>
+          <button
+            type="submit"
+            onclick="window.location.href='viewnotes.html';"
+          >
+            VIEW
+          </button>
+        </div>
+
+        <div class="right">
+          <p class="time">Created: Nov 15, 2020 at 5:15 pm</p>
+          <p class="time">Latest post: Jan 10, 2021 at 8:20pm</p>
+          <p class="posts">
+            <i class="fa-regular fa-pen-to-square"></i> 30 posts
+          </p>
+        </div>
+      </div>
+
+      <button
+        id="newnote-button"
+        type="submit"
+        onclick="window.location.href='createnote.html';"
+      >
+        CREATE NEW NOTE
+      </button>
+    </div>
+
+    <div class="navbar">
+      <a href="noteslist.html" class="active"><i class="fas fa-home"></i></a>
+      <a href="createnote.html"><i class="fa-regular fa-pen-to-square"></i></a>
+      <a href="#"><i class="far fa-bell"></i></a>
+      <a href="access.html"><i class="far fa-share-square"></i></a>
+    </div>
+  </body>
+</html>

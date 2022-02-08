@@ -1,0 +1,318 @@
+body{
+    background-color: #072227;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url("images/sincerely-media-7ZXx3JofFVY-unsplash.jpg"); */
+    color: #4FBDBA;
+    margin: 0;
+}
+
+/*************** Style Login & Signup Page *************/
+header{
+    margin: 0;
+}
+.instructions{
+    padding-left: 5px;
+    margin-top: -10px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+.login-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2px;
+    grid-row-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    height: 700px;
+    padding: 15px;
+}
+
+.login-content{
+    margin-top: 20px;
+    line-height: 1rem;
+}
+.login-content h2{
+    margin-top: 50px;
+}
+.login-content-box{
+    margin-top: 70px;
+}
+
+/********* General style *******************/
+a{
+    text-decoration: none;
+}
+.link{
+    text-decoration: none;
+    background-color: #35858B;
+    border: 1px solid #35858B;
+    border-radius: 2px;
+    color: #AEFEFF;
+    padding: 12px 40px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.link:hover{
+    background: #AEFEFF;
+    border: 1px solid #AEFEFF;
+    color: #35858B;    
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #AEFEFF;
+}
+
+h2{
+    letter-spacing: 0.08em;
+    font-size: 35px;
+}
+button {
+    background-color: #35858B;
+    border: 1px solid #35858B;
+    border-radius: 2px;
+    color: #AEFEFF;
+    padding: 12px 20px;
+    margin: 10px 0px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 50%;
+}
+button:hover{
+    background: #AEFEFF;
+    border: 1px solid #AEFEFF;
+    color: #35858B;    
+}
+
+/**************Style signup page **********/
+
+.avatar-box{
+    display: inline-block;
+}
+.avater-text{
+    display: inline-block;
+}
+.avater-text i{
+    padding-left: 5px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    border: 1px solid #4FBDBA;
+    background: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0px;
+}
+.bottom{
+    bottom: 0;
+}
+.bottom a{
+    text-decoration: none;
+    color: #4FBDBA;
+    font-weight: 800;
+}
+.bottom a:hover{
+    color: #AEFEFF;
+}
+#choose{
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+
+/***************** Style noteslist ************/
+.welcome{
+    font-size: 12px;
+    text-align: right;
+    padding-right: 20px;
+}
+.wel{
+    padding-right: 10px;
+}
+
+.all-notes{
+    padding-left: 20px;
+}
+
+.noteslist-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.notes-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+    border: 1px solid #35858B;
+    padding: 20px;
+    margin: 20px;
+}
+.right{
+    font-size: 10px;
+    text-align: right;
+}
+.btn-group{
+    justify-content: space-around;
+    display: table;
+}
+.secondary-btn{
+    background: none;
+    border: 1px solid #35858B;
+    border-radius: 2px;
+    color: #AEFEFF;
+    padding: 12px 20px;
+    margin: 10px 0px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 50%; 
+}
+#newnote-button{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.posts{
+    margin-top: 130px;
+}
+ 
+
+/********************* Styling Create notes page **************************/
+.createnotes-container{
+    padding: 20px;
+    height: 400px;
+    margin: auto;
+    width: 50%;
+}
+.back{
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+    padding-left: 20px;
+    color: #4FBDBA;
+}
+.back i{
+    padding-right: 5px;
+}
+.back:hover{
+    color: #AEFEFF;
+}
+textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #4FBDBA;
+    border-radius: 4px;
+    background-color: #4FBDBA;
+    font-size: 16px;
+    text-align: center;
+    resize: none;
+}
+#create-button{
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 0;
+}
+textarea:valid ::placeholder{
+    display: none;
+}
+
+
+/************* Styling view|contribute notes page ********************/
+.author-profile{
+    padding: 20px;
+}
+.top-date{
+    text-align: center;
+    font-size: 12px;
+}
+.bottom-date{
+    margin-top: 80px;
+    text-align: right;
+    font-size: 12px;
+}
+.viewnotes-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    border: 1px solid #35858B;
+    margin: 20px;
+    padding: 20px;
+}
+.allnotes-button{
+    margin-left: 0;
+}
+
+
+/********* Styling Grant and Revoke Access Page **********/
+.note-title{
+    font-size: 30px;
+    padding-left: 20px;
+}
+.allusers-container{
+    padding: 20px;
+    border-top: 1px solid #35858B;
+    display: grid;
+    grid-template: 1fr 1fr;
+}
+.user{
+    display: flex;
+    justify-content: space-between;
+}
+.left-side{
+    margin-top: 10px;
+}
+.right-side{
+    width: 50%;
+}
+.avatar-name{
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+
+/*********** Bottom Nav ****************/
+
+.navbar {
+    overflow: hidden;
+    background: #4FBDBA;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+.navbar a {
+    float: left;
+    display: block;
+    color: #f1f1f1;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.navbar a:hover {
+    background: #f1f1f1;
+    color: #072227;
+}
+  
+.navbar a.active {
+    background-color: #35858B;
+    color: white;
+}
+.nav-avatar{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+    margin-left: 350px;
+}
