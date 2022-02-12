@@ -106,29 +106,53 @@ a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #835151;
 }
 
 h2{
     letter-spacing: 0.08em;
     font-size: 35px;
 }
+.btn-group{
+    display: table;
+}
 button {
-    background-color: #835151;
-    border: 1px solid #835151;
-    border-radius: 2px;
-    color: #FFEACA;
     padding: 12px 20px;
     margin: 10px 0px;
-    font-weight: 800;
     cursor: pointer;
     width: 50%;
+    text-decoration: none;
+    background-color: #C84B31;
+    border: 1px solid #C84B31;
+    border-radius: 20px;
+    color: #ECDBBA;
+    letter-spacing: 0.15em;
+    /* padding: 12px 60px; */
+    font-size: 12px;
+    font-weight: 800;
 }
 button:hover{
     background: none;
     border: 1px solid #835151;
     color: #835151;    
 }
+.secondary-btn{
+    background: none;
+    border: none;
+    background-color: none;
+    border-radius: 20px;
+    color: #ECDBBA;
+    padding: 12px 20px;
+    margin: 10px 0px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 50%; 
+}
+.secondary-btn:hover{
+    background-color: #C84B31;
+    border: 1px solid #C84B31;
+    color: #ECDBBA;
+}
+
 
 /**************Style signup page **********/
 
@@ -150,16 +174,23 @@ button:hover{
 
 /***************** Style noteslist ************/
 .welcome{
-    font-size: 12px;
     text-align: right;
     padding-right: 20px;
+    margin-top: 15px;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    color: #fff;
+    opacity: 0.7;
 }
 .wel{
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .all-notes{
-    padding-left: 20px;
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-size: 40px;
+    margin-bottom: 0;
 }
 
 .noteslist-container{
@@ -169,32 +200,27 @@ button:hover{
 .notes-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 200px;
-    background-color: #FFBCBC;
-    border: 1px solid #F08FC0;
-    border-radius: 12px;
+    grid-auto-rows: 180px;
+    background-color: #2D4263;
+    border: 1px solid #2D4263;
+    border-radius: 8px;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
+    margin-bottom: 0;
 }
+.notes-container-secondary{
+    border: 1px solid #2D4263;
+    background: none;
+}
+
 .right{
     font-size: 10px;
+    opacity: 0.5;
     text-align: right;
 }
-.btn-group{
-    justify-content: space-around;
-    display: table;
-}
-.secondary-btn{
-    background: none;
-    border: 1px solid #FFEACA;
-    background-color: #FFEACA;
-    border-radius: 2px;
-    color: #835151;
-    padding: 12px 20px;
-    margin: 10px 0px;
-    font-weight: 800;
-    cursor: pointer;
-    width: 50%; 
+
+.posts{
+    margin-top: 130px;
 }
 #newnote-button{
     display: block;
@@ -202,9 +228,6 @@ button:hover{
     margin-bottom: 100px;
     margin-left: auto;
     margin-right: 20px;
-}
-.posts{
-    margin-top: 130px;
 }
  
 
@@ -217,27 +240,28 @@ button:hover{
 }
 .back{
     cursor: pointer;
+    font-size: 14px;
     transition: transform .2s; /* Animation */
     padding-left: 20px;
-    color: #F08FC0;
+    color: #ECDBBA;
 }
 .back i{
-    padding-right: 5px;
+    padding-right: 2px;
 }
 .back:hover{
-    color: #FFBCBC;
+    color: #C84B31;
 }
 textarea{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 200px;
-    padding: 12px 20px;
+    height: 100px;
+    padding: 30px 20px;
     box-sizing: border-box;
-    border: 2px solid #F08FC0;
+    border: 2px solid #2D4263;
     border-radius: 4px;
-    background-color: #F08FC0;
+    background-color: #2d426317;
     font-size: 16px;
     text-align: center;
     resize: none;
@@ -258,21 +282,33 @@ textarea:valid ::placeholder{
     padding: 20px;
 }
 .top-date{
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    opacity: 0.6;
     text-align: center;
-    font-size: 12px;
 }
 .bottom-date{
     margin-top: 80px;
     text-align: right;
-    font-size: 12px;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    opacity: 0.6;
 }
 .viewnotes-container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 100px;
-    border: 1px solid #35858B;
+    grid-auto-rows: 80px;
     margin: 20px;
+    margin-bottom: 0;
     padding: 20px;
+    background-color: #2D4263;
+    border: 1px solid #2D4263;
+   
+    border-radius: 8px;
+}
+.chat{
+    line-height: 1.3rem;
+    font-size: 12px;
 }
 .allnotes-button{
     margin-left: 0;
@@ -284,9 +320,18 @@ textarea:valid ::placeholder{
     font-size: 30px;
     padding-left: 20px;
 }
+.remove{
+    background: none;
+    border: none;
+}
+.remove:hover{
+    background: #C84B31;
+    border: 1px solid #C84B31;
+    color: #ECDBBA;
+}
 .allusers-container{
     padding: 20px;
-    border-top: 1px solid #35858B;
+    border-top: 1px solid #2D4263;
     display: grid;
     grid-template: 1fr 1fr;
 }
@@ -310,7 +355,7 @@ textarea:valid ::placeholder{
 
 .navbar {
     overflow: hidden;
-    background: #F08FC0;
+    background: #191919;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -326,18 +371,11 @@ textarea:valid ::placeholder{
 }
   
 .navbar a:hover {
-    background: #f1f1f1;
-    color: #072227;
+    background: #ECDBBA;
+    color: #2D4263;
 }
   
 .navbar a.active {
-    background-color: #835151;
-    color: white;
-}
-.nav-avatar{
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    margin-top: 7px;
-    margin-left: 350px;
+    background-color: #2D4263;
+    color: #ECDBBA;
 }
