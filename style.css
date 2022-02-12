@@ -1,8 +1,8 @@
 body{
-    background-color: #072227;
+    background-color: #FFEACA;
     font-family: Arial, Helvetica, sans-serif;
     /* background-image: url("images/sincerely-media-7ZXx3JofFVY-unsplash.jpg"); */
-    color: #4FBDBA;
+    color: #835151;
     margin: 0;
 }
 
@@ -46,18 +46,18 @@ a{
 }
 .link{
     text-decoration: none;
-    background-color: #35858B;
-    border: 1px solid #35858B;
+    background-color: #FFBCBC;
+    border: 1px solid #FFBCBC;
     border-radius: 2px;
-    color: #AEFEFF;
+    color: #835151;
     padding: 12px 40px;
     font-weight: 800;
     cursor: pointer;
 }
 .link:hover{
-    background: #AEFEFF;
-    border: 1px solid #AEFEFF;
-    color: #35858B;    
+    background: #F08FC0;
+    border: 1px solid #F08FC0;
+    color: #835151;    
 }
 
 .avatar {
@@ -65,7 +65,7 @@ a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #AEFEFF;
+    border: 2px solid #835151;
 }
 
 h2{
@@ -73,10 +73,10 @@ h2{
     font-size: 35px;
 }
 button {
-    background-color: #35858B;
-    border: 1px solid #35858B;
+    background-color: #835151;
+    border: 1px solid #835151;
     border-radius: 2px;
-    color: #AEFEFF;
+    color: #FFEACA;
     padding: 12px 20px;
     margin: 10px 0px;
     font-weight: 800;
@@ -84,9 +84,9 @@ button {
     width: 50%;
 }
 button:hover{
-    background: #AEFEFF;
-    border: 1px solid #AEFEFF;
-    color: #35858B;    
+    background: none;
+    border: 1px solid #835151;
+    color: #835151;    
 }
 
 /**************Style signup page **********/
@@ -102,7 +102,7 @@ button:hover{
 }
 input[type=text], input[type=password] {
     width: 100%;
-    border: 1px solid #4FBDBA;
+    border: 1px solid #835151;
     background: none;
     border-radius: 5px;
     padding: 15px;
@@ -113,7 +113,7 @@ input[type=text], input[type=password] {
 }
 .bottom a{
     text-decoration: none;
-    color: #4FBDBA;
+    color: #835151;
     font-weight: 800;
 }
 .bottom a:hover{
@@ -148,7 +148,9 @@ input[type=text], input[type=password] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 200px;
-    border: 1px solid #35858B;
+    background-color: #FFBCBC;
+    border: 1px solid #F08FC0;
+    border-radius: 12px;
     padding: 20px;
     margin: 20px;
 }
@@ -162,9 +164,10 @@ input[type=text], input[type=password] {
 }
 .secondary-btn{
     background: none;
-    border: 1px solid #35858B;
+    border: 1px solid #FFEACA;
+    background-color: #FFEACA;
     border-radius: 2px;
-    color: #AEFEFF;
+    color: #835151;
     padding: 12px 20px;
     margin: 10px 0px;
     font-weight: 800;
@@ -194,13 +197,13 @@ input[type=text], input[type=password] {
     cursor: pointer;
     transition: transform .2s; /* Animation */
     padding-left: 20px;
-    color: #4FBDBA;
+    color: #F08FC0;
 }
 .back i{
     padding-right: 5px;
 }
 .back:hover{
-    color: #AEFEFF;
+    color: #FFBCBC;
 }
 textarea{
     display: block;
@@ -210,9 +213,9 @@ textarea{
     height: 200px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #4FBDBA;
+    border: 2px solid #F08FC0;
     border-radius: 4px;
-    background-color: #4FBDBA;
+    background-color: #F08FC0;
     font-size: 16px;
     text-align: center;
     resize: none;
@@ -285,7 +288,7 @@ textarea:valid ::placeholder{
 
 .navbar {
     overflow: hidden;
-    background: #4FBDBA;
+    background: #F08FC0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -306,7 +309,7 @@ textarea:valid ::placeholder{
 }
   
 .navbar a.active {
-    background-color: #35858B;
+    background-color: #835151;
     color: white;
 }
 .nav-avatar{
