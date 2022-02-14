@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
 
+    <style type="text/css">
+      .err_msg{
+        color: red;
+      }
+    </style>
     <!-- fontfamily link -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Style page link -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Javascript link -->
+    <script type="text/javascript" src="validate.js"></script>
+
   </head>
   <body>
     <div class="login-container">
@@ -19,26 +28,29 @@
         <p class="instructions">Fill in this form to Log In to your account.</p>
       </div>
 
-      <form action="/" method="post">
+      <form id="LogIn" method="post">
         <div class="login-content-box">
             <div class="login-content">
-              <label for="username">Username / Email Address</label>
-              <input type="text" id="username" name="username"/>
+              <label for="email">Email Address</label>
+              <input type="text" id="email" name="email"/>
+              <label for="err_msg" id="email_msg" class="err_msg"></label>
             </div>
             
             <div class="login-content">
               <label for="password">Password</label>
               <input type="password" id="password" name="password"/>
+              <label for="err_msg" id="pswd_msg" class="err_msg"></label>
             </div>
             
             <div class="login-content-link">
-              <a href="noteslist.html" class="link">LOGIN</a>
-              <!-- <button type="submit">LOGIN</button> -->
+              <input type="submit" class="link" value="LogIn" />
             </div>
         </div>
-        
       </form>
-     
+
+     <script type="text/javascript" src="validate-r.js"></script>
+
+
       <div class="login-content bottom">
         <p>Do not have an account? <a href="signup.html">Sign up</a></p>
       </div>

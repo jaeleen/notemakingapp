@@ -63,8 +63,8 @@ input[type=text], input[type=password] {
 }
 .link{
     text-decoration: none;
-    background-color: #C84B31;
-    border: 1px solid #C84B31;
+    border: 1px solid #ECDBBA;
+    background: none;
     border-radius: 20px;
     color: #ECDBBA;
     letter-spacing: 0.15em;
@@ -74,6 +74,8 @@ input[type=text], input[type=password] {
     cursor: pointer;
 }
 .link:hover{
+    background: #C84B31;
+    border: 1px solid #C84B31;
     opacity: 0.7;
 } 
 
@@ -106,6 +108,9 @@ a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    border: 2px solid #ECDBBA;
+    background: #191919;
+    padding: 3px;
 }
 
 h2{
@@ -121,19 +126,18 @@ button {
     cursor: pointer;
     width: 50%;
     text-decoration: none;
-    background-color: #C84B31;
-    border: 1px solid #C84B31;
+    background: none;
+    border: 1px solid #ECDBBA;
     border-radius: 20px;
     color: #ECDBBA;
     letter-spacing: 0.15em;
-    /* padding: 12px 60px; */
     font-size: 12px;
     font-weight: 800;
 }
 button:hover{
-    background: none;
-    border: 1px solid #835151;
-    color: #835151;    
+    background-color: #C84B31;
+    border: 1px solid #C84B31;
+    color: #ECDBBA;  
 }
 .secondary-btn{
     background: none;
@@ -172,7 +176,7 @@ button:hover{
 
 
 
-/***************** Style noteslist ************/
+/***************** ALLNOTES - NOTELIST Style ************/
 .welcome{
     text-align: right;
     padding-right: 20px;
@@ -187,10 +191,13 @@ button:hover{
 }
 
 .all-notes{
-    text-align: center;
+    text-align: left;
+    margin-left: 40px;
+    font-size: 15px;
+    margin-bottom: 13px;
+}
+.note-topic{
     font-family: 'Handlee', cursive;
-    font-size: 40px;
-    margin-bottom: 0;
 }
 
 .noteslist-container{
@@ -200,16 +207,21 @@ button:hover{
 .notes-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 180px;
+    grid-auto-rows: 150px;
     background-color: #2D4263;
     border: 1px solid #2D4263;
     border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     padding: 20px;
-    margin: 10px;
-    margin-bottom: 0;
+    margin: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 .notes-container-secondary{
     border: 1px solid #2D4263;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     background: none;
 }
 
@@ -218,16 +230,21 @@ button:hover{
     opacity: 0.5;
     text-align: right;
 }
-
 .posts{
-    margin-top: 130px;
+    margin-top: 90px;
 }
+.posts i{
+    opacity: 1;
+    color: #C84B31;
+}
+
 #newnote-button{
     display: block;
     margin-top: 20px;
     margin-bottom: 100px;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 40px;
+    width: 40%;
 }
  
 
@@ -306,6 +323,10 @@ textarea:valid ::placeholder{
    
     border-radius: 8px;
 }
+.viewnote-topic{
+    padding: 0;
+    font-size: 20px;
+}
 .chat{
     line-height: 1.3rem;
     font-size: 12px;
@@ -313,12 +334,21 @@ textarea:valid ::placeholder{
 .allnotes-button{
     margin-left: 0;
 }
-
+.small-createnotes-container{
+    height: 230px;
+}
 
 /********* Styling Grant and Revoke Access Page **********/
 .note-title{
     font-size: 30px;
-    padding-left: 20px;
+    margin-left: 40px;
+    margin-bottom: 60px;
+}
+.all-users{
+    margin-bottom: 0;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    color: #ECDBBA;
 }
 .remove{
     background: none;
@@ -331,13 +361,15 @@ textarea:valid ::placeholder{
 }
 .allusers-container{
     padding: 20px;
-    border-top: 1px solid #2D4263;
+    /* border-top: 1px solid #ECDBBA; */
     display: grid;
     grid-template: 1fr 1fr;
 }
 .user{
     display: flex;
     justify-content: space-between;
+    margin-left: 40px;
+    margin-bottom: 10px;
 }
 .left-side{
     margin-top: 10px;
@@ -364,18 +396,17 @@ textarea:valid ::placeholder{
 .navbar a {
     float: left;
     display: block;
-    color: #f1f1f1;
+    color: #ECDBBA;
     padding: 14px 26px;
+    margin-right: 40px;
     text-decoration: none;
     font-size: 17px;
 }
   
 .navbar a:hover {
-    background: #ECDBBA;
-    color: #2D4263;
+    color: #C84B31;
 }
   
 .navbar a.active {
-    background-color: #2D4263;
-    color: #ECDBBA;
+    color: #C84B31;
 }
