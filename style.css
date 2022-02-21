@@ -49,7 +49,7 @@ input[type=text], input[type=password] {
     margin-top: 5px;
     line-height: 1rem;
 }
-.login-topic h2{
+.login-topic  h2{
     font-family: 'Handlee', cursive;
     font-weight: 800;
     text-align: center;
