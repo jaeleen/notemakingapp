@@ -14,6 +14,10 @@
 
     <!-- Style sheet link -->
     <link rel="stylesheet" href="style.css" />
+
+     <!-- Javascript link -->
+     <script type="text/javascript" src="validate.js"></script>
+
   </head>
   <body>
     <header>
@@ -81,8 +85,10 @@
 
       <div class="createnotes-container small-createnotes-container">
         <form>
-          <textarea placeholder="Notes..."></textarea>
+          <textarea placeholder="Notes..." onkeyup="countNumOfChars(this);"></textarea>
+          <p id="numofchars"> 0 characters</p>
           <button id="create-button" type="submit">ADD NOTE</button>
+
         </form>
       </div>
     </div>
