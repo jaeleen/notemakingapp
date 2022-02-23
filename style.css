@@ -172,6 +172,8 @@ button:hover{
 #choose{
     cursor: pointer;
     padding: 10px;
+    font-size: 13px;
+    opacity: 0.7;
 }
 
 

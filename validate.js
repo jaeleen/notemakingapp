@@ -48,10 +48,67 @@ function LogInForm(event){
     }
 
     else{
-        alert("Signup successful!");
+        alert("Login successful!");
         event.preventDefault(); //remove for final submission
     }
     // Add code for if validation is true.
+}
+
+function SignUpForm(event){
+    event.preventDefault();
+
+    var valid = true;
+
+    var elements = event.currentTarget;
+    var email = elements[0].value; 
+    var uname = elements[1].value;
+    var pswd = elements[2].value;
+    var pswdr = elements[3].value;
+
+    var regex_email = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var regex_uname = /^[a-zA-Z0-9_-]+$/;
+    var regex_pswd  = /^(\S*)?\d+(\S*)?$/;
+
+    var signup_email_msg = document.getElementById("signup_email_msg");
+    var signup_uname_msg = document.getElementById("signup_uname_msg");
+    var signup_pswd_msg = document.getElementById("signup_pswd_msg");
+    var signup_pswdr_msg = document.getElementById("signup_pswdr_msg");
+
+    signup_email_msg.innerHTML = "";
+    signup_uname_msg.innerHTML = "";
+    signup_pswd_msg.innerHTML = "";
+    signup_pswdr_msg.innerHTML = "";
+
+    //Variables for DOM Manipulation commands
+    var textNode;
+    var htmlNode;
+
+    if(email == null || email == ""){
+        textNode = document.createTextNode("Email address is empty.");
+        signup_email_msg.appendChild(textNode);
+        valid = false;
+    }
+    else if(regex_email.test(email) == false){
+        textNode = document.createTextNode("Follow email format: someone@gmail.com");
+        signup_email_msg.appendChild(textNode);
+        valid = false;
+    }
+
+    if(password ==null || password ==""){
+        textNode = document.createTextNode("Password is empty.");
+        signup_pswd_msg.appendChild(textNode);
+        valid = false;
+    }
+    else if(password.length <= 6){
+        textNode = document.createTextNode("Password has to be 6 characters or more. \n");
+        signup_pswd_msg.appendChild(textNode);
+        valid = false;
+    }
+
+    else{
+        alert("Signup successful!");
+        event.preventDefault(); //remove for final submission
+    }
 }
 
 
@@ -67,6 +124,11 @@ function countChars(obj) {
     }
 }
 
+// Required text field for Create Note Page
+function required(){
+    var topic = document.getElementById("requiredArea").value;
+    console.log(topic);
+}
 // Dynamic counter for View / contribute Note Page
 function countNumOfChars(obj) {
     var maxLength = 1500;
