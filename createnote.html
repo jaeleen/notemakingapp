@@ -18,19 +18,20 @@
   </head>
   <body>
     <header>
-        <p class="welcome"><span class="wel">Welcome</span> <img src="images/playstore.png" alt="avatar" class="avatar"/> Stewie_g</p>
+        <p class="welcome"><span class="wel">Welcome</span> <img src="images/stewie-profilepic.png" alt="avatar" class="avatar"/> Stewie_g</p>
         <a href="index.html">
           <p class="back"><i class="fa-solid fa-angle-left"></i> Notes</p>
         </a>
       </header>
 
       <div class="createnotes-container">
-        <form id="CreateNote" method="post">
-            <textarea id = "requiredArea" placeholder="NOTE TITLE" onkeyup="countChars(this);"></textarea>
-            <p id="charNum"> 0 characters</p>
-            <button id="create-button" type="submit">CREATE NOTE</button>
+        <form id="CreateNote" method="post" onsubmit="validateForm(CreateNote.noteTopic)">
+            <textarea id = "noteTopic" placeholder="NOTE TITLE" onkeyup="countChars(this);"></textarea>
+            <p id="charNum"></p>
+            <input type="submit" id="create-button" class="link" value="CREATE NOTE" />
         </form>
       </div>
+      <script type="text/javascript" src="validate-r.js"></script>
 
       <div class="navbar">
         <a href="index.html" class="active"><i class="fas fa-home"></i></a>

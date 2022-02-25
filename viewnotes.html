@@ -84,11 +84,10 @@
       </div>
 
       <div class="createnotes-container small-createnotes-container">
-        <form>
-          <textarea placeholder="Notes..." onkeyup="countNumOfChars(this);"></textarea>
-          <p id="numofchars"> 0 characters</p>
-          <button id="create-button" type="submit">ADD NOTE</button>
-
+        <form id="AddNote" method="post" onsubmit="validateForm(AddNote.noteContribution)">
+          <textarea id="noteContribution" placeholder="Notes..." onkeyup="countNumOfChars(this);"></textarea>
+          <p id="numofchars"></p>
+          <input type="submit" id="create-button" class="link" value="CREATE NOTE" />
         </form>
       </div>
     </div>

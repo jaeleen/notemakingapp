@@ -124,11 +124,6 @@ function countChars(obj) {
     }
 }
 
-// Required text field for Create Note Page
-function required(){
-    var topic = document.getElementById("requiredArea").value;
-    console.log(topic);
-}
 // Dynamic counter for View / contribute Note Page
 function countNumOfChars(obj) {
     var maxLength = 1500;
@@ -140,5 +135,14 @@ function countNumOfChars(obj) {
         document.getElementById("numofchars").innerHTML = strLength+' / '+maxLength+' characters';
     }
 }
+// Required text field for Create Note Page
+function validateForm(event) {
+    if (event.value == "" || event.value == null) {
+        alert("Please enter some text into the feedback field");
+           return false;
+    }
+    else
+        return true;
+    }
 
 

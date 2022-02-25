@@ -2,4 +2,4 @@
 
 document.getElementById("LogIn").addEventListener("submit", LogInForm, false);
 document.getElementById("SignUp").addEventListener("submit", SignUpForm, false);
-document.getElementById("CreateNote").addEventListener("submit", required);
+// document.getElementById("CreateNote").addEventListener("submit", requiredField, false);
