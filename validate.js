@@ -1,11 +1,6 @@
 function LogInForm(event){
-    event.preventDefault();
-
 
     var valid = true;
-    // var errormessage = "";
-    // var user_inputs = "";
-
 
     var elements = event.currentTarget;
     var email = elements[0].value; 
@@ -24,7 +19,7 @@ function LogInForm(event){
     var textNode;
     var htmlNode;
 
-    // Validate Username
+    // Validate Email
     if(email == null || email == ""){
         textNode = document.createTextNode("Email address is empty.");
         email_msg.appendChild(textNode);
@@ -47,29 +42,20 @@ function LogInForm(event){
         valid = false;
     }
 
-    else{
+    if (valid == true){
         alert("Login successful!");
+    }
+    
+    else{
         event.preventDefault(); //remove for final submission
     }
     // Add code for if validation is true.
 }
 
+
 function SignUpForm(event){
-    event.preventDefault();
-
+    alert("Signup successful!");
    
-    var regex_email = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var regex_uname = /^[a-zA-Z0-9_-]+$/;
-    var regex_pswd  = /^(\S*)?\d+(\S*)?$/;
-
-    
-
-    // The two passwords do not match. Please retype the passwords.
-
-    // else{
-    //     alert("Signup successful!");
-    //     event.preventDefault(); //remove for final submission
-    // }
 }
 
 
@@ -99,7 +85,8 @@ function countNumOfChars(obj) {
 // Required text field for Create Note Page
 function validateForm(event) {
     if (event.value == "" || event.value == null) {
-        alert("Please enter some text into the feedback field");
+        document.getElementById("noInput").innerHTML = "Please enter some text into the feedback field";
+        // alert("Please enter some text into the feedback field");
            return false;
     }
     else

@@ -161,6 +161,8 @@ button:hover{
 /**************Style signup page **********/
 
 .avatar-box{
+    margin-top: 50px;
+    margin-bottom: 10px;
     display: inline-block;
 }
 .avater-text{
@@ -169,11 +171,16 @@ button:hover{
 .avater-text i{
     padding-left: 5px;
 }
-#choose{
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    margin-left: 15px;
+    border: 1px solid #2D4263;
+    display: inline-block;
+    padding: 6px 12px;
     cursor: pointer;
-    padding: 10px;
-    font-size: 13px;
-    opacity: 0.7;
 }
 
 
@@ -209,14 +216,14 @@ button:hover{
 .notes-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 170px;
+    grid-auto-rows: 220px;
     background-color: #2D4263;
     border: 1px solid #2D4263;
     border-radius: 8px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    padding: 20px;
-    margin: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -231,6 +238,9 @@ button:hover{
     font-size: 10px;
     opacity: 0.5;
     text-align: right;
+}
+.left .avatar-box{
+    margin-top: 19px;
 }
 .posts{
     margin-top: 90px;
@@ -298,6 +308,10 @@ textarea:valid ::placeholder{
 #charNum{
     font-size: 11px;
     color: #2D4263;
+}
+#noInput{
+    font-size: 11px;
+    color: red;
 }
 
 
@@ -383,9 +397,10 @@ textarea:valid ::placeholder{
     margin-bottom: 10px;
 }
 .left-side{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .right-side{
+    margin-top: 5px;
     width: 50%;
 }
 .avatar-name{
