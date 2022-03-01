@@ -11,3 +11,5 @@ Using JavaScript to validate forms and textarea.
 3.  Create  Note  Page •  note  name  (non-blank;  256  characters  or  less) 
 
 4.  View/Contribute  Note  Page •  contribution  (non-blank;  1500  characters  or  less) 
+
+Update html avatar image to take input 
