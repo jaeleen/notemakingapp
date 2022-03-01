@@ -40,6 +40,7 @@
               <i class="fa fa-cloud-upload"></i> Choose Avatar
             </label>
             <input id="file-upload" type="file" />
+            <label for="err_msg" id="file_msg" class="err_msg"></label>
           </div>
         </div>
         <div class="login-content">
@@ -50,17 +51,20 @@
 
         <div class="login-content">
           <label for="username">Username</label>
-          <input type="text" id="signup_uname_msg" name="username" />
+          <input type="text" id="username" name="username" />
+          <label for="err_msg" id="signup_uname_msg" class="err_msg"></label>
         </div>
 
         <div class="login-content">
           <label for="pswd">Password</label>
-          <input type="password" id="signup_pswd_msg" name="pswd" />
+          <input type="password" id="pswd" name="pswd" />
+          <label for="err_msg" id="signup_pswd_msg" class="err_msg"></label>
         </div>
 
         <div class="login-content">
           <label for="pswdr">Confirm Password</label>
-          <input type="password" id="signup_pswdr_msg" name="pswdr" />
+          <input type="password" id="pswdr" name="pswdr" />
+          <label for="err_msg" id="signup_pswdr_msg" class="err_msg"></label>
         </div>
 
         <div class="login-content-link">
@@ -68,7 +72,7 @@
         </div>
       </form>
 
-      <script type="text/javascript" src="validate-r.js"></script>
+      <script type="text/javascript" src="signup-r.js"></script>
 
       <div class="login-content bottom">
         <p>Already have an account? <a href="login.html">Log in</a></p>

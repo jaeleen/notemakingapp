@@ -7,7 +7,9 @@ body{
     color: #fff;
     margin: 0;
 }
-
+.err_msg{
+    color: red;
+  }
 /*************** Style Login & Signup Page *************/
 header{
     margin: 0;

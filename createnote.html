@@ -25,14 +25,14 @@
       </header>
 
       <div class="createnotes-container">
-        <form id="CreateNote" method="post" onsubmit="validateForm(CreateNote.noteTopic)">
-            <textarea id = "noteTopic" placeholder="NOTE TITLE" onkeyup="countChars(this);"></textarea>
+        <form id="CreateNote" method="post" action="viewnotes.html">
+            <textarea id = "noteTopic" placeholder="NOTE TITLE" ></textarea>
             <p id="charNum"></p>
             <p id="noInput"></p>
             <input type="submit" id="create-button" class="link" value="CREATE NOTE" />
         </form>
       </div>
-      <script type="text/javascript" src="validate-r.js"></script>
+      <script type="text/javascript" src="createnote-r.js"></script>
 
       <div class="navbar">
         <a href="index.html" class="active"><i class="fas fa-home"></i></a>
