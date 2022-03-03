@@ -70,7 +70,7 @@ input[type=text], input[type=password] {
     border-radius: 20px;
     color: #ECDBBA;
     letter-spacing: 0.15em;
-    padding: 12px 60px;
+    padding: 12px 40px;
     font-size: 12px;
     font-weight: 800;
     cursor: pointer;
@@ -203,7 +203,7 @@ input[type="file"] {
 
 .all-notes{
     text-align: left;
-    margin-left: 40px;
+    margin-left: 20px;
     font-size: 15px;
     margin-bottom: 13px;
 }
@@ -218,7 +218,7 @@ input[type="file"] {
 .notes-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 220px;
+    grid-auto-rows: 230px;
     background-color: #2D4263;
     border: 1px solid #2D4263;
     border-radius: 8px;
@@ -226,10 +226,11 @@ input[type="file"] {
     border-bottom-left-radius: 0px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .notes-container-secondary{
+    grid-auto-rows: 230px;
     border: 1px solid #2D4263;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -237,7 +238,7 @@ input[type="file"] {
 }
 
 .right{
-    font-size: 10px;
+    font-size: 8px;
     opacity: 0.5;
     text-align: right;
 }
@@ -245,7 +246,7 @@ input[type="file"] {
     margin-top: 19px;
 }
 .posts{
-    margin-top: 90px;
+    margin-top: 180px;
 }
 .posts i{
     opacity: 1;
@@ -328,22 +329,21 @@ textarea:valid ::placeholder{
     text-align: center;
 }
 .bottom-date{
-    margin-top: 80px;
+    margin-top: 100px;
     text-align: right;
-    font-size: 10px;
+    font-size: 8px;
     letter-spacing: 0.09em;
     opacity: 0.6;
 }
 .viewnotes-container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 90px;
+    grid-auto-rows: 120px;
     margin: 20px;
     margin-bottom: 0;
-    padding: 20px;
+    padding: 10px;
     background-color: #2D4263;
     border: 1px solid #2D4263;
-   
     border-radius: 8px;
 }
 .viewnote-topic{
@@ -426,7 +426,7 @@ textarea:valid ::placeholder{
     display: block;
     color: #ECDBBA;
     padding: 14px 26px;
-    margin-right: 40px;
+    margin-right: 20px;
     text-decoration: none;
     font-size: 17px;
 }
