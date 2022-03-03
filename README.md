@@ -2,7 +2,7 @@
 
 Building a collaborative note-taking application. 
 
-Using JavaScript to validate forms and textarea. 
+Using JavaScript to  implement the  form  validation  features. 
 
 1.  Login  Page •  email  address  (valid  email  address  format) •  password  (6  characters  or  longer, no  spaces) 
 
