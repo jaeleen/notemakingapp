@@ -1,3 +1,5 @@
+// Log In form Validation
+
 function LogInForm(event) {
   var valid = true;
 
@@ -7,8 +9,7 @@ function LogInForm(event) {
 
   var regex_email =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  var regex_uname = /^[a-zA-Z0-9_-]+$/;
-  var regex_pswd = /^(\S*)?\d+(\S*)?$/;
+  var regex_pswd = /^\S*$/; //No spaces
 
   var email_msg = document.getElementById("email_msg");
   var pswd_msg = document.getElementById("pswd_msg");
@@ -36,20 +37,26 @@ function LogInForm(event) {
     textNode = document.createTextNode("Password is empty.");
     pswd_msg.appendChild(textNode);
     valid = false;
-  } else if (password.length <= 6) {
+  }
+  else if(regex_pswd.test(password) == false){
+    textNode = document.createTextNode("Password cannot contain whitespace.");
+    pswd_msg.appendChild(textNode);
+    valid = false;
+  }
+   else if (password.length < 6) {
     textNode = document.createTextNode(
-      "Password has to be 6 characters or more. \n"
+      "Password has to be 6 characters or longer. \n"
     );
     pswd_msg.appendChild(textNode);
     valid = false;
   }
-
-  if (valid == true) {
-    alert("Login successful!");
-  } else {
-    event.preventDefault(); //remove for final submission
+  if(valid == true){
+    // form reset event to clear the form.
+    document.getElementById("SignUp").reset();
   }
-  // Add code for if validation is true.
+  else {
+     event.preventDefault();
+  }
 }
 
 function SignUpForm(event) {
@@ -64,8 +71,8 @@ function SignUpForm(event) {
 
   var regex_email =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  var regex_uname = /^[a-zA-Z0-9_-]+$/;
-  var regex_pswd = /^(\S*)?\d+(\S*)?$/;
+  var regex_uname = /^[a-zA-Z0-9_-]+$/; //No spaces or non character.
+  var regex_pswd = /^(\S*)?\d*(\S*)?[!@#$&()\\-`.+,\/\"]+$/; //Matches atleast one special character.
 
   var file_msg = document.getElementById("file_msg");
   var signup_email_msg = document.getElementById("signup_email_msg");
@@ -108,7 +115,7 @@ function SignUpForm(event) {
     valid = false;
   } else if (regex_uname.test(username) == false) {
     textNode = document.createTextNode(
-      "No spaces or other non-word characters"
+      "Username can not include whitespaces or other non-word characters"
     );
     signup_uname_msg.appendChild(textNode);
     valid = false;
@@ -120,7 +127,7 @@ function SignUpForm(event) {
     valid = false;
   } else if (regex_pswd.test(pswd) == false) {
     textNode = document.createTextNode(
-      "Password must contain atleast one non-character."
+      "Password must contain atleast one non-letter character."
     );
     signup_pswd_msg.appendChild(textNode);
     valid = false;
@@ -136,6 +143,14 @@ function SignUpForm(event) {
     textNode = document.createTextNode("Passwords must match.");
     signup_pswdr_msg.appendChild(textNode);
     valid = false;
+  }
+
+  if(valid == true){
+    // form reset event to clear the form.
+    document.getElementById("SignUp").reset();
+  }
+  else {
+     event.preventDefault();
   }
 }
 
