@@ -1,20 +1,17 @@
 // Log In form Validation
+// Log In form Validation
 
-function LogInForm(event) {
+function checkEmail(event) {
+
   var valid = true;
 
-  var elements = event.currentTarget;
-  var email = elements[0].value;
-  var password = elements[1].value;
+  var field = event.currentTarget;
+  var email = field.value;
 
-  var regex_email =
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  var regex_pswd = /^\S*$/; //No spaces
+  var regex_email = /^[a-zA-Z0-9.!#$%&â€™*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   var email_msg = document.getElementById("email_msg");
-  var pswd_msg = document.getElementById("pswd_msg");
   email_msg.innerHTML = "";
-  pswd_msg.innerHTML = "";
 
   //Variables for DOM Manipulation commands
   var textNode;
@@ -32,6 +29,23 @@ function LogInForm(event) {
     email_msg.appendChild(textNode);
     valid = false;
   }
+}
+
+function checkPassword(event) {
+
+  var valid = true;
+
+  var field = event.currentTarget;
+  var password = field.value;
+
+  var regex_pswd = /^\S*$/; //No spaces 
+
+  var pswd_msg = document.getElementById("pswd_msg");
+  pswd_msg.innerHTML = "";
+
+  //Variables for DOM Manipulation commands
+  var textNode;
+  var htmlNode;
 
   if (password == null || password == "") {
     textNode = document.createTextNode("Password is empty.");
@@ -53,9 +67,6 @@ function LogInForm(event) {
   if(valid == true){
     // form reset event to clear the form.
     document.getElementById("SignUp").reset();
-  }
-  else {
-     event.preventDefault();
   }
 }
 
