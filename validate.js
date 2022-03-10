@@ -115,7 +115,7 @@ function checkSignUpPassword(event) {
 
 function checkFile(event){
   var valid = true;
-  
+
   var field = event.currentTarget;
   var file = field.value;
 
@@ -132,6 +132,42 @@ function checkFile(event){
       file_msg.appendChild(textNode);
       valid = false;
     }
+}
+
+function checkUserName(event){
+  var valid = true;
+
+  var field = event.currentTarget;
+  var username = field.value;
+
+  var regex_uname = /^[a-zA-Z0-9_-]+$/; //No spaces or non character.
+  var signup_uname_msg = document.getElementById("signup_uname_msg");
+
+  signup_uname_msg.innerHTML = "";
+
+    //Variables for DOM Manipulation commands
+    var textNode;
+    var htmlNode;
+
+    if (username == null || username == "") {
+      textNode = document.createTextNode("Username is empty.");
+      signup_uname_msg.appendChild(textNode);
+      valid = false;
+    } else if (regex_uname.test(username) == false) {
+      textNode = document.createTextNode(
+        "Username can not include whitespaces or other non-word characters"
+      );
+      signup_uname_msg.appendChild(textNode);
+      valid = false;
+    }
+
+  if(valid == true){
+    // form reset event to clear the form.
+    document.getElementById("SignUp").reset();
+  }
+  else {
+     event.preventDefault();
+  }
 }
 
 function SignUpForm(event) {
