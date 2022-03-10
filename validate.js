@@ -70,6 +70,70 @@ function checkPassword(event) {
   }
 }
 
+function checkSignUpPassword(event) {
+
+  var valid = true;
+
+  var field = event.currentTarget;
+  var pswd = field.value;
+
+  var regex_pswd = /^(\S*)?\d*(\S*)?[!@#$&()\\-`.+,\/\"]+$/; //Matches atleast one special character.
+
+  var signup_pswd_msg = document.getElementById("signup_pswd_msg");
+  signup_pswd_msg.innerHTML = "";
+
+  //Variables for DOM Manipulation commands
+  var textNode;
+  var htmlNode;
+
+  if (pswd == null || pswd == "") {
+    textNode = document.createTextNode("Password is empty.");
+    signup_pswd_msg.appendChild(textNode);
+    valid = false;
+  } else if (regex_pswd.test(pswd) == false) {
+    textNode = document.createTextNode(
+      "Password must contain atleast one non-letter character."
+    );
+    signup_pswd_msg.appendChild(textNode);
+    valid = false;
+  } else if (pswd.length != 6) {
+    textNode = document.createTextNode(
+      "Password must be exactly 6 characters."
+    );
+    signup_pswd_msg.appendChild(textNode);
+    valid = false;
+  }
+
+  if(valid == true){
+    // form reset event to clear the form.
+    document.getElementById("SignUp").reset();
+  }
+  else {
+     event.preventDefault();
+  }
+}
+
+function checkFile(event){
+  var valid = true;
+  
+  var field = event.currentTarget;
+  var file = field.value;
+
+  var file_msg = document.getElementById("file_msg");
+
+  file_msg.innerHTML = "";
+
+    //Variables for DOM Manipulation commands
+    var textNode;
+  
+    if (file == "" || file == null) {
+      event.preventDefault();
+      textNode = document.createTextNode("No image selected.");
+      file_msg.appendChild(textNode);
+      valid = false;
+    }
+}
+
 function SignUpForm(event) {
   var valid = true;
 
@@ -80,8 +144,7 @@ function SignUpForm(event) {
   var pswd = elements[3].value;
   var pswdr = elements[4].value;
 
-  var regex_email =
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var regex_email = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   var regex_uname = /^[a-zA-Z0-9_-]+$/; //No spaces or non character.
   var regex_pswd = /^(\S*)?\d*(\S*)?[!@#$&()\\-`.+,\/\"]+$/; //Matches atleast one special character.
 
