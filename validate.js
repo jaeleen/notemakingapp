@@ -73,18 +73,65 @@ function checkPassword(event) {
   return true;
  event.preventDefault();
 }
-function logInForm(){
-  var valid = true;
-  
-    var elements = event.currentTarget;
-    var email = elements[0].value;
-    var password = elements[1].value;
 
-    if (checkEmail(email)){
-      alert(email);
-    }
+function LogInForm(event) {
+  var valid = true;
+
+  var elements = event.currentTarget;
+  var email = elements[0].value;
+  var password = elements[1].value;
+
+  var regex_email =
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var regex_pswd = /^\S*$/; //No spaces
+
+  var email_msg = document.getElementById("email_msg");
+  var pswd_msg = document.getElementById("pswd_msg");
+  email_msg.innerHTML = "";
+  pswd_msg.innerHTML = "";
+
+  //Variables for DOM Manipulation commands
+  var textNode;
+  var htmlNode;
+
+  // Validate Email
+  if (email == null || email == "") {
+    textNode = document.createTextNode("Email address is empty.");
+    email_msg.appendChild(textNode);
+    valid = false;
+  } else if (regex_email.test(email) == false) {
+    textNode = document.createTextNode(
+      "Follow email format: someone@gmail.com"
+    );
+    email_msg.appendChild(textNode);
+    valid = false;
+  }
+
+  if (password == null || password == "") {
+    textNode = document.createTextNode("Password is empty.");
+    pswd_msg.appendChild(textNode);
+    valid = false;
+  }
+  else if(regex_pswd.test(password) == false){
+    textNode = document.createTextNode("Password cannot contain whitespace.");
+    pswd_msg.appendChild(textNode);
+    valid = false;
+  }
+   else if (password.length < 6) {
+    textNode = document.createTextNode(
+      "Password has to be 6 characters or longer. \n"
+    );
+    pswd_msg.appendChild(textNode);
+    valid = false;
+  }
+  if(result == false){
+    event.preventDefault();
+  }
+  else if(result == true){
+     window.location.href = "index.html";
+  }
 }
-  
+/******************** SIGN UP VALIDATION ***************/
   function SignUpForm(event) {
     var valid = true;
   
