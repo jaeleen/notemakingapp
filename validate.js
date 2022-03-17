@@ -130,6 +130,75 @@ function LogInForm(event) {
   }
 }
 /******************** SIGN UP VALIDATION ***************/
+function checkUsername(event){
+  var valid = true;
+
+  var field = event.currentTarget;
+  var username = field.value;
+  
+    var regex_uname = /^[a-zA-Z0-9_-]+$/; //No spaces or non character.
+  
+    var signup_uname_msg = document.getElementById("signup_uname_msg");
+  
+    signup_uname_msg.innerHTML = "";
+  
+    //Variables for DOM Manipulation commands
+    var textNode;
+    var htmlNode;
+  
+    if (username == null || username == "") {
+      textNode = document.createTextNode("Username is empty.");
+      signup_uname_msg.appendChild(textNode);
+      valid = false;
+    } else if (regex_uname.test(username) == false) {
+      textNode = document.createTextNode(
+        "Username can not include whitespaces or other non-word characters"
+      );
+      signup_uname_msg.appendChild(textNode);
+      valid = false;
+    }
+    event.preventDefault();
+}
+
+function checkSignUpPassword(event) {
+
+  // var valid = true;
+
+  var field = event.currentTarget;
+  var password = field.value;
+
+  var regex_pswd = /^(\S*)?\d*(\S*)?[!@#$&()\\-`.+,\/\"]+$/; //Matches atleast one special character.
+
+  var pswd_msg = document.getElementById("pswd_msg");
+  pswd_msg.innerHTML = "";
+
+  //Variables for DOM Manipulation commands
+  var textNode;
+  var htmlNode;
+
+  if (password == null || password == "") {
+    textNode = document.createTextNode("Password is empty.");
+    pswd_msg.appendChild(textNode);
+    // valid = false;
+    return false;
+  }
+  else if(regex_pswd.test(password) == false){
+    textNode = document.createTextNode("Password cannot contain whitespace.");
+    pswd_msg.appendChild(textNode);
+    // valid = false;
+    return false;
+  }
+   else if (password.length < 6) {
+    textNode = document.createTextNode(
+      "Password has to be 6 characters or longer. \n"
+    );
+    pswd_msg.appendChild(textNode);
+    // valid = false;
+    return false;
+  }
+  event.preventDefault();
+}
+
   function SignUpForm(event) {
     var valid = true;
   
@@ -216,12 +285,11 @@ function LogInForm(event) {
       valid = false;
     }
 
-    if(valid == true){
-      // form reset event to clear the form.
-      document.getElementById("SignUp").reset();
+    if(valid == false){
+      event.preventDefault();
     }
-    else {
-       event.preventDefault();
+    else if(valid == true){
+       window.location.href = "index.html";
     }
   }
   

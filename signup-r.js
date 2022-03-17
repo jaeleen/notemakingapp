@@ -6,6 +6,6 @@ var file_upload = document.getElementById("file_upload");
 
 
 document.getElementById("email").addEventListener("blur", checkEmail);
-document.getElementById("username").addEventListener("blur", checkUserName);
+document.getElementById("username").addEventListener("blur", checkUsername);
 document.getElementById("pswd").addEventListener("blur", checkSignUpPassword);
 document.getElementById("file_upload").addEventListener("blur", checkFile);
