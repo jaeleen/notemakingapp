@@ -30,7 +30,6 @@ function checkEmail(event) {
     // valid = false;
     return false;
   }
-  return true;
   event.preventDefault();
 }
 
@@ -70,8 +69,7 @@ function checkPassword(event) {
     // valid = false;
     return false;
   }
-  return true;
- event.preventDefault();
+  event.preventDefault();
 }
 
 function LogInForm(event) {
@@ -124,10 +122,10 @@ function LogInForm(event) {
     pswd_msg.appendChild(textNode);
     valid = false;
   }
-  if(result == false){
+  if(valid == false){
     event.preventDefault();
   }
-  else if(result == true){
+  else if(valid == true){
      window.location.href = "index.html";
   }
 }
