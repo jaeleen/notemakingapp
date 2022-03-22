@@ -188,9 +188,9 @@ function checkSignUpPassword(event) {
     // valid = false;
     return false;
   }
-   else if (password.length < 6) {
+   else if (password.length != 6) {
     textNode = document.createTextNode(
-      "Password has to be 6 characters or longer. \n"
+      "Password must be exactly 6 characters. \n"
     );
     pswd_msg.appendChild(textNode);
     // valid = false;

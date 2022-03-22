@@ -195,7 +195,7 @@ input[type="file"] {
     font-size: 10px;
     letter-spacing: 0.09em;
     color: #fff;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 .wel{
     padding-right: 5px;
