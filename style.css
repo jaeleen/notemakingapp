@@ -120,7 +120,16 @@ h2{
     font-size: 35px;
 }
 .btn-group{
-    display: table;
+    display: inline;
+    padding-left: 50px;
+}
+.text_link a{
+    background: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 1px solid #ECDBBA;
+    border-radius: 20px;
+    color: #ECDBBA;
 }
 button {
     padding: 12px 20px;
@@ -188,6 +197,9 @@ input[type="file"] {
 
 
 /***************** ALLNOTES - NOTELIST Style ************/
+a{
+    text-decoration: none;
+}
 .welcome{
     text-align: right;
     padding-right: 40px;
@@ -200,16 +212,23 @@ input[type="file"] {
 .wel{
     padding-right: 5px;
 }
-
+.logout_link{
+    text-align: right;
+    padding-right: 40px;
+    margin-top: 15px;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    color: #fff;
+}
 .all-notes{
     text-align: left;
     margin-left: 20px;
     font-size: 15px;
     margin-bottom: 13px;
 }
-.note-topic{
+/* .note-topic{
     font-family: 'Handlee', cursive;
-}
+} */
 
 .noteslist-container{
     display: grid;

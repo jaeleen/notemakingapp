@@ -2,7 +2,7 @@
 var email = document.getElementById("email");
 var username = document.getElementById("username");
 var pswd = document.getElementById("pswd");
-var file_upload = document.getElementById("file_upload");
+var fileToUpload = document.getElementById("fileToUpload");
 
 
 document.getElementById("email").addEventListener("blur", checkEmail);

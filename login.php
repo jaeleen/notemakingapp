@@ -1,3 +1,42 @@
+<?php
+
+if (isset($_POST["submitted"]) && $_POST["submitted"]) {
+  // get the username and password and check that they aren't empty
+  $email = trim($_POST["email"]);
+  $password = trim($_POST["password"]);
+  if (strlen($email) > 0 && strlen($password) > 0) {
+    // load the database and verify the username/password
+    $db = new mysqli("localhost", "okon202p", "lovely02", "okon202p");
+      if ($db->connect_error) {
+        die ("Connection failed: " . $db->connect_error);
+      }
+    
+      $q = "SELECT user_id, username, avatar_URL FROM Users WHERE email = '$email' AND password = '$password';";
+      $result = $db->query($q);
+    
+      if ($row = $result->fetch_assoc()) {
+        // login successful
+        session_start();
+      $_SESSION["user_id"] = $row["user_id"];
+      $_SESSION["username"] = $row["username"];
+      $_SESSION["avatar_URL"] = $row["avatar_URL"];
+      header("Location: index.php");
+      $db->close();
+      exit();
+    } else {
+      // login unsuccessful
+      $error = ("The username/password combination was incorrect.");
+      $db->close();
+    }
+  } else {
+    $error = ("You must enter a non-blank username/password combination to login.");
+  }
+} else {
+  $error = "";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,10 +60,11 @@
     <div class="login-container">
       <div class="login-topic">
         <h2>Log In</h2>
+        <p class="error"><?=$error ?></p>
         <p class="instructions">Fill in this form to Log In to your account.</p>
       </div>
 
-      <form id="LogIn" method="post" action="index.html">
+      <form id="LogIn" method="post" action="login.php">
         <div class="login-content-box">
             <div class="login-content">
               <label for="email">Email Address</label>
@@ -42,12 +82,13 @@
               <input type="submit" class="link" value="LOG IN" />
             </div>
         </div>
+        <input type="hidden" name="submitted" value="1"/>
       </form>
 
      <script type="text/javascript" src="validate-r.js"></script>
 
       <div class="login-content bottom">
-        <p>Do not have an account? <a href="signup.html">Sign up</a></p>
+        <p>Do not have an account? <a href="signup.php">Sign up</a></p>
       </div>
       
     </div>
