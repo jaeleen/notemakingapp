@@ -6,7 +6,7 @@ if (isset($_POST["submitted"]) && $_POST["submitted"]) {
   $password = trim($_POST["password"]);
   if (strlen($email) > 0 && strlen($password) > 0) {
     // load the database and verify the username/password
-    $db = new mysqli("localhost", "okon202p", "lovely02", "okon202p");
+    $db = new mysqli("localhost", "okon202p", "pswd", "okon202p");
       if ($db->connect_error) {
         die ("Connection failed: " . $db->connect_error);
       }

@@ -9,7 +9,7 @@
     $avatar_URL = $_SESSION["avatar_URL"];
 		
 		// load the database and get the orders for this user
-		$db = new mysqli("localhost", "okon202p", "lovely02", "okon202p");
+		$db = new mysqli("localhost", "okon202p", "pswd", "okon202p");
 	  	if ($db->connect_error) {
 	  		die ("Connection failed: " . $db->connect_error);
 		}

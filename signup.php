@@ -21,7 +21,7 @@
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
          
-      $db = new mysqli("localhost", "okon202p", "lovely02", "okon202p");
+      $db = new mysqli("localhost", "okon202p", "pswd", "okon202p");
       if ($db->connect_error) {
           die ("Connection failed: " . $db->connect_error);
       }

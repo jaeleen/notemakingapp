@@ -4,60 +4,78 @@
 		header("Location: login.php");
 		exit();
 	} 
-  else {
+  if (isset($_GET["nid"])){
 
+    $note_id = $_GET["nid"];
     $user_id = $_SESSION["user_id"];
-		$username = $_SESSION["username"];
+    $username = $_SESSION["username"];
     $avatar_URL = $_SESSION["avatar_URL"];
-    // echo $note_id;
 
     if(isset($_POST["submitted"]) && $_POST["submitted"]){
-
-      // Get the note topic and check that it isn't empty.
       $noteContribution = trim($_POST["noteContribution"]);
-      
 
-      if(strlen($noteContribution) >0 && strlen($noteContribution) <= 1500){
-        // get note id from previous page(index.html)
-        if (isset($_GET['nid'])){
-          $note_id = $_GET['nid'];
-        }
-        // load the database
-        $db = new mysqli("localhost", "okon202p", "lovely02", "okon202p");
+      if (strlen($noteContribution) >0 && strlen($noteContribution)<= 1500){
+        //load the database
+        $db = new mysqli("localhost", "okon202p", "pswd", "okon202p");
         if ($db->connect_error) {
           die ("Connection failed: " . $db->connect_error);
         }	
-
-        // Query to create new role.
-        $q2 = "INSERT INTO Roles (user_id, role, note_id) VALUES ('$user_id', 'owner', (SELECT note_id FROM Notes WHERE note_id = $note_id));";
+        //Query to create new role.
+        $q2 = "INSERT INTO Roles (user_id, role, note_id) VALUES ('$user_id', 'contributor', (SELECT note_id FROM Notes WHERE note_id = $note_id));";
+        
         $r2 = $db->query($q2);
 
         if($r2 === true){
-          // get id of last inserted role_id and insert into the contributions table.
-          $last_id = $db->insert_id;
-
-          // Query to insert new contribuion into the database.
-          $q2 = "INSERT INTO Contributions (role_id, note_id, contribution, save_dt) VALUES ((SELECT role_id FROM Roles WHERE role_id = $last_id), (SELECT note_id FROM Notes WHERE note_id = $note_id), '$noteContribution', NOW())";
-
-          $r2 = $db->query($q2);
-
-          if($r2 === true){
-            header("Location: viewnotes.php");
-            $db->close();
-            exit();
-          }
+          header("Location: viewnotes.php");
+          $db->close();
+          exit();
         }
-        else{
-          echo "Data could not be inserted into database.";
-        }
-      }
-      else{
-        echo "Contribution cannot be empty and can only be 1500 characters.";
-      }
+      } else echo "Must be between 0-1500 chars";
     }
+  }
+
+
+  //     if(strlen($noteContribution) >0 && strlen($noteContribution) <= 1500){
+  //       // get note id from previous page(index.html)
+  //       if (isset($_GET['nid'])){
+  //         $note_id = $_GET['nid'];
+  //       }
+  //       // load the database
+  //       $db = new mysqli("localhost", "okon202p", "pswd", "okon202p");
+  //       if ($db->connect_error) {
+  //         die ("Connection failed: " . $db->connect_error);
+  //       }	
+
+  //       // Query to create new role.
+  //       $q2 = "INSERT INTO Roles (user_id, role, note_id) VALUES ('$user_id', 'owner', (SELECT note_id FROM Notes WHERE note_id = $note_id));";
+  //       $r2 = $db->query($q2);
+
+  //       if($r2 === true){
+  //         // get id of last inserted role_id and insert into the contributions table.
+  //         $last_id = $db->insert_id;
+
+  //         // Query to insert new contribuion into the database.
+  //         $q2 = "INSERT INTO Contributions (role_id, note_id, contribution, save_dt) VALUES ((SELECT role_id FROM Roles WHERE role_id = $last_id), (SELECT note_id FROM Notes WHERE note_id = $note_id), '$noteContribution', NOW())";
+
+  //         $r2 = $db->query($q2);
+
+  //         if($r2 === true){
+  //           header("Location: viewnotes.php");
+  //           $db->close();
+  //           exit();
+  //         }
+  //       }
+  //       else{
+  //         echo "Data could not be inserted into database.";
+  //       }
+  //     }
+  //     else{
+  //       echo "Contribution cannot be empty and can only be 1500 characters.";
+  //     }
+  //   }
 
     
-	}
+	// }
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +113,7 @@
         <img src="images/stewie-profilepic.png" alt="avatar" class="avatar" />
       </div>
       <div class="avater-text">
-        <p class="avatar-name"><?= $username ?></p>
+        <p class="avatar-name">Username</p>
       </div>
       <h2 class="note-topic viewnote-topic">Fitness Notes</h2>
     </div>
